@@ -75,6 +75,7 @@ nav{position:sticky;top:0;z-index:200;background:var(--bg0);border-bottom:1px so
 .eq{font-family:var(--mono);font-size:.8rem;background:var(--bg2);border-left:3px solid var(--accent-b);border-radius:0 var(--r) var(--r) 0;padding:1rem 1.25rem;color:var(--text0);line-height:2;margin:1.25rem 0;overflow-x:auto;white-space:pre;}
 
 blockquote{border-left:2px solid var(--border-md);padding-left:1rem;margin:1.2rem 0;color:var(--text2);font-style:italic;font-size:.9rem;line-height:1.65;}
+blockquote cite{display:block;margin-top:.4rem;font-family:var(--mono);font-size:.62rem;color:var(--text2);font-style:normal;letter-spacing:.02em;}
 
 /* iso rating cards */
 .iso-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.5rem 0;}
@@ -91,6 +92,13 @@ blockquote{border-left:2px solid var(--border-md);padding-left:1rem;margin:1.2re
 .traj-body{padding:.9rem 1.1rem;font-family:var(--mono);font-size:.75rem;color:var(--text1);line-height:2;}
 .traj-body span{display:block;}
 .traj-arrow{color:var(--text2);margin-left:.5rem;}
+
+/* primary source panel */
+.source-card{background:var(--bg1);border:1px solid var(--border);border-radius:var(--rl);padding:1.5rem;margin:1.5rem 0;}
+.source-card blockquote{margin:1.1rem 0 0;}
+.source-meta{margin-top:1rem;padding-top:.85rem;border-top:1px solid var(--border);font-family:var(--mono);font-size:.6rem;color:var(--text2);letter-spacing:.02em;}
+.source-meta a{color:var(--text2);text-decoration:none;}
+.source-meta a:hover{color:var(--text1);}
 
 /* verdict */
 .verdict{background:var(--gold-d);border:1px solid var(--gold-b);border-radius:var(--rl);padding:1.75rem;margin:2rem 0 3rem;}
@@ -203,6 +211,24 @@ footer{border-top:1px solid var(--border);padding:2rem 0;}
 
     <div class="prose">
       <p>There is certainly an aesthetic and historical rhyme.</p>
+    </div>
+  </section>
+
+  <!-- PRIMARY SOURCE: SELF-CRITICISM 1886 -->
+  <section class="section">
+    <h2 class="section-head">Primary source · 1886</h2>
+    <h3 class="section-title">What the trajectory panel is<br>actually <em>compressing</em></h3>
+
+    <div class="prose">
+      <p>The "thunderclap → Alps → Greek serenity" sequence above isn't invented shorthand — it's a compression of Nietzsche's own account, written as the new 1886 preface to <em>Birth of Tragedy</em>. He dates the book's real origin to the Franco-Prussian War: he was drafting his thoughts on the Greeks in an Alpine retreat in the summer of 1870 as news of the fighting reached him, was still turning the same question over weeks later near Metz, and only resolved it — convalescing from an illness picked up in the field — in the same month Prussia and France were negotiating terms at Versailles. The peace table and the manuscript table close in the same month, in the same breath.</p>
+    </div>
+
+    <div class="source-card">
+      <blockquote>
+        "the thunder of the battle of Wörth was rolling over Europe"
+        <cite>Nietzsche, <em>Attempt at a Self-Criticism</em> (1886), §1</cite>
+      </blockquote>
+      <div class="source-meta">Trans. Walter Kaufmann, in <em>The Birth of Tragedy and The Case of Wagner</em> (Vintage, 1967) — full preface not reproduced here; <a href="https://www.google.com/search?q=Nietzsche+%22Attempt+at+a+Self-Criticism%22+full+text" target="_blank">source / further reading →</a></div>
     </div>
   </section>
 
