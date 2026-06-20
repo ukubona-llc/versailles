@@ -79,6 +79,8 @@ blockquote cite{display:block;margin-top:.4rem;font-family:var(--mono);font-size
 
 /* iso rating cards */
 .iso-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.5rem 0;}
+/* 5-column variant — auto-fill collapses without needing extra breakpoints */
+.iso-grid-5{grid-template-columns:repeat(auto-fill,minmax(145px,1fr));}
 .iso-card{background:var(--bg1);border:1px solid var(--border);border-radius:var(--rl);padding:1.25rem;border-top:3px solid var(--card-color,var(--border-md));}
 .iso-label{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--card-color,var(--text2));margin-bottom:.4rem;}
 .iso-title{font-family:var(--serif);font-size:1.05rem;color:var(--text0);margin-bottom:.5rem;}
@@ -135,8 +137,13 @@ footer{border-top:1px solid var(--border);padding:2rem 0;}
 @media(max-width:620px){
   .outer{padding:0 1rem;}
   .iso-grid{grid-template-columns:1fr;}
+  .iso-grid-5{grid-template-columns:1fr 1fr;}
   .traj-grid{grid-template-columns:1fr;}
   .hero-title{font-size:1.9rem;}
+  .eq{font-size:.7rem;}
+}
+@media(max-width:360px){
+  .iso-grid-5{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -387,7 +394,7 @@ Output (Eigenmodes)              J·v = λ·v — stable modes, below</div>
         <p>The five modes aren't rungs on a ladder. They're principal components — simultaneously available, weighted differently from moment to moment. Each pairs a dominant object with its own ontology of time, and its own characteristic way of failing.</p>
       </div>
 
-      <div class="iso-grid" style="grid-template-columns:repeat(5,1fr);">
+      <div class="iso-grid iso-grid-5">
         <div class="iso-card" style="--card-color:var(--accent);">
           <div class="iso-label">e₁ · Language</div>
           <div class="iso-title">Text</div>
@@ -463,6 +470,16 @@ const btn=document.getElementById('theme-btn');
 let t='dark';
 function apply(v){t=v;html.setAttribute('data-theme',v);btn.textContent=v==='dark'?'light':'dark';}
 btn.addEventListener('click',()=>apply(t==='dark'?'light':'dark'));
+
+const tabs=document.querySelectorAll('.tab-btn');
+const panels=document.querySelectorAll('.tab-panel');
+tabs.forEach(b=>b.addEventListener('click',()=>{
+  tabs.forEach(x=>x.classList.remove('active'));
+  panels.forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');
+  document.getElementById('tab-'+b.dataset.tab).classList.add('active');
+}));
+
 apply('dark');
 </script>
 </body>
