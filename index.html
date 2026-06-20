@@ -115,6 +115,15 @@ blockquote cite{display:block;margin-top:.4rem;font-family:var(--mono);font-size
 .claude-body p:last-child{margin-bottom:0;}
 .claude-body strong{color:var(--text0);font-weight:500;}
 
+/* tabs */
+.tabs-wrap{border-bottom:1px solid var(--border);}
+.tabs{display:flex;gap:0;}
+.tab-btn{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text2);background:none;border:none;border-bottom:2px solid transparent;padding:.85rem 0;margin-right:1.75rem;cursor:pointer;transition:color .2s,border-color .2s;}
+.tab-btn:hover{color:var(--text1);}
+.tab-btn.active{color:var(--text0);border-bottom-color:var(--accent);}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+
 footer{border-top:1px solid var(--border);padding:2rem 0;}
 .footer-inner{max-width:var(--max);margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;}
 .footer-mark{font-family:var(--mono);font-size:.6rem;color:var(--text2);line-height:1.9;letter-spacing:.04em;}
@@ -151,6 +160,15 @@ footer{border-top:1px solid var(--border);padding:2rem 0;}
     <h1 class="hero-title">It is pretty<br><em>uncanny</em>.</h1>
     <p class="hero-lede">Trump signing an Iran peace MOU at Versailles in 2026, while cultivating a nationalist/populist movement. Three kinds of isomorphism. Symbols are sticky. People inhabit symbolic architectures they did not design.</p>
   </header>
+
+  <div class="tabs-wrap">
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="main" type="button">Versailles · 1919/2026</button>
+      <button class="tab-btn" data-tab="pc" type="button">Principal Components</button>
+    </div>
+  </div>
+
+  <div class="tab-panel active" id="tab-main">
 
   <!-- THREE ISOMORPHISMS -->
   <section class="section">
@@ -228,7 +246,7 @@ footer{border-top:1px solid var(--border);padding:2rem 0;}
         "the thunder of the battle of Wörth was rolling over Europe"
         <cite>Nietzsche, <em>Attempt at a Self-Criticism</em> (1886), §1</cite>
       </blockquote>
-      <div class="source-meta">Trans. Walter Kaufmann, in <em>The Birth of Tragedy and The Case of Wagner</em> (Vintage, 1967) — full preface not reproduced here; <a href="https://www.google.com/search?q=Nietzsche+%22Attempt+at+a+Self-Criticism%22+full+text" target="_blank">source / further reading →</a></div>
+      <div class="source-meta">Full preface not reproduced here — hosted in full on the dossier: <a href="https://ukb-dt.github.io/attempt-at-self-criticism/" target="_blank">Attempt at a Self-Criticism →</a></div>
     </div>
   </section>
 
@@ -339,6 +357,90 @@ Meaning attribution</div>
       <p>Not because history repeats. Because the tensor of collective memory is append-only. State<sub>t</sub> = Σ Event<sub>i</sub>. Versailles 1919 is still in the ledger. It was never overwritten. Sequential, consequential, indelible.</p>
     </div>
   </div>
+
+  </div><!-- /tab-main -->
+
+  <!-- PRINCIPAL COMPONENTS TAB -->
+  <div class="tab-panel" id="tab-pc">
+
+    <section class="section" style="border-top:none;padding-top:1.5rem;">
+      <h2 class="section-head">Principal components · 20 Jun 2026</h2>
+      <h3 class="section-title">A nested fractal,<br>logged while it's <em>still hot</em></h3>
+      <div class="prose">
+        <p><em>Orthogonal note: this tab doesn't continue the Versailles narrative — it sits beside it, a different basis vector through the same conversation. Filed here for the record. Coherence pending; vibes not withheld.</em></p>
+        <p>The spine is a spectral decomposition of personhood: the world acts on a person as a tensor, gets filtered through a sensitivity operator, collapses into a current-state vector, and resolves into a handful of stable modes — which is what gets called a "self."</p>
+      </div>
+
+      <div class="eq">Nonself (Tensor)               T ∈ ℝⁿ¹ˣⁿ²ˣ···
+        ↓                          the world: history, parents,
+                                    books, wars, Versailles, others
+Input (Jacobian Matrix)         J = ∂y/∂x
+        ↓                          sensitivity operator — taste (Nietzsche),
+                                    mode of attention (McGilchrist),
+                                    saliency (ML), sensitivity (clinical)
+Throughput (Vector)              v ∈ ℝᵏ
+        ↓                          current state: mood, context,
+                                    trajectory, metabolism, conversation
+Output (Eigenmodes)              J·v = λ·v — stable modes, below</div>
+
+      <div class="prose">
+        <p>The five modes aren't rungs on a ladder. They're principal components — simultaneously available, weighted differently from moment to moment. Each pairs a dominant object with its own ontology of time, and its own characteristic way of failing.</p>
+      </div>
+
+      <div class="iso-grid" style="grid-template-columns:repeat(5,1fr);">
+        <div class="iso-card" style="--card-color:var(--accent);">
+          <div class="iso-label">e₁ · Language</div>
+          <div class="iso-title">Text</div>
+          <div class="iso-rating">sequential</div>
+          <div class="iso-body">symbolic encoding — fails as naming without seeing</div>
+        </div>
+        <div class="iso-card" style="--card-color:var(--gold);">
+          <div class="iso-label">e₂ · Science</div>
+          <div class="iso-title">Model / PDF</div>
+          <div class="iso-rating">snapshot</div>
+          <div class="iso-body">compressed state estimation — fails as counting without becoming</div>
+        </div>
+        <div class="iso-card" style="--card-color:var(--coral);">
+          <div class="iso-label">e₃ · Art</div>
+          <div class="iso-title">Music / Opera</div>
+          <div class="iso-rating">event stream</div>
+          <div class="iso-body">temporal unfolding — fails as feeling without integration</div>
+        </div>
+        <div class="iso-card" style="--card-color:var(--teal);">
+          <div class="iso-label">e₄ · Life</div>
+          <div class="iso-title">Organism</div>
+          <div class="iso-rating">continuous adaptation</div>
+          <div class="iso-body">embodied dynamics — fails as mere survival/reactivity</div>
+        </div>
+        <div class="iso-card" style="--card-color:var(--rose);">
+          <div class="iso-label">e₅ · Meaning</div>
+          <div class="iso-title">Witness</div>
+          <div class="iso-rating">retro/prospective coherence</div>
+          <div class="iso-body">coherence functional — fails as dogmatism / metaphysics</div>
+        </div>
+      </div>
+
+      <div class="eq">Self (Scalar)                  σ = Σ wᵢλᵢ    or    sₜ = Tr(Pₜ)
+                                  Pₜ — projection onto presently
+                                  occupied modes. Not the climber.
+                                  The scalar shadow of the climb.</div>
+
+      <div class="prose">
+        <p>High-dimensional occupancy — many modes lit at once, large entropy — reads as mania. Collapse to one mode forced to carry everything reads as dogmatism. Ukubona's bet is the third option: a stable, low-rank decomposition — a few modes, well-chosen, none of them doing the others' job.</p>
+        <p>Under this reading science and art stop being opponents and become complementary projections of the same tensor. Science samples states; it compresses to a PDF. The temporal arts preserve transitions; a held dissonance refuses to compress. Nietzsche's own self-criticism gestures at exactly this asymmetry — he regrets reaching for a philologist's argument when, by his own account, the book's "new soul" needed to come out as music instead. <a href="https://ukb-dt.github.io/attempt-at-self-criticism/" target="_blank">Full text →</a></p>
+      </div>
+
+      <div class="verdict" style="--gold:var(--teal);--gold-d:var(--teal-d);--gold-b:var(--teal-b);">
+        <div class="verdict-head">Proverb · extended</div>
+        <div class="verdict-quote">"Okubala si kulaba; okulaba kulina okutambula."</div>
+        <div class="verdict-body">
+          <p>Counting is not seeing; seeing must move. <strong>Science counts. Music moves. The scalar self is what's left watching both.</strong></p>
+        </div>
+      </div>
+
+    </section>
+
+  </div><!-- /tab-pc -->
 
 </div>
 
