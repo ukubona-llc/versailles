@@ -378,17 +378,27 @@ Meaning attribution</div>
         <p>The spine is a spectral decomposition of personhood: the world acts on a person as a tensor, gets filtered through a sensitivity operator, collapses into a current-state vector, and resolves into a handful of stable modes — which is what gets called a "self."</p>
       </div>
 
-      <div class="eq">Nonself (Tensor)               T ∈ ℝⁿ¹ˣⁿ²ˣ···
-        ↓                          the world: history, parents,
-                                    books, wars, Versailles, others
-Input (Jacobian Matrix)         J = ∂y/∂x
-        ↓                          sensitivity operator — taste (Nietzsche),
-                                    mode of attention (McGilchrist),
-                                    saliency (ML), sensitivity (clinical)
-Throughput (Vector)              v ∈ ℝᵏ
-        ↓                          current state: mood, context,
-                                    trajectory, metabolism, conversation
-Output (Eigenmodes)              J·v = λ·v — stable modes, below</div>
+      <div class="eq">Nonself (Tensor)
+         │                 T ∈ ℝⁿ¹ˣⁿ²ˣ··· · history, parents,
+         │                 books, wars, Versailles, biology, others
+         ▼
+Input (Jacobian)
+         │                 J = ∂y/∂x · sensitivity: taste · attention
+         ▼
+Throughput (Vector)
+         │                 v ∈ ℝᵏ · state: mood · context · trajectory
+         ▼
+Output (Eigenmodes)        J·v = λ·v
+         ├── e₁  Language  · symbolic basis        · sequential
+         ├── e₂  Science   · state estimator       · snapshot
+         ├── e₃  Art       · trajectory generator  · event stream
+         ├── e₄  Life      · adaptive controller   · continuous
+         └── e₅  Meaning   · coherence functional  · retro/prospective
+         │
+         │         ⟨ each eᵢ is itself a pentad — the fractal ⟩
+         ▼
+Self (Scalar)              σ = Σ wᵢλᵢ   or   sₜ = Tr(Pₜ)
+                           not the climber — scalar shadow of the climb</div>
 
       <div class="prose">
         <p>The five modes aren't rungs on a ladder. They're principal components — simultaneously available, weighted differently from moment to moment. Each pairs a dominant object with its own ontology of time, and its own characteristic way of failing.</p>
@@ -427,10 +437,13 @@ Output (Eigenmodes)              J·v = λ·v — stable modes, below</div>
         </div>
       </div>
 
-      <div class="eq">Self (Scalar)                  σ = Σ wᵢλᵢ    or    sₜ = Tr(Pₜ)
-                                  Pₜ — projection onto presently
-                                  occupied modes. Not the climber.
-                                  The scalar shadow of the climb.</div>
+      <div class="eq">e₃ · Art — interior fractal:
+         ├── e₃.₁  Language  notation, score, libretto
+         ├── e₃.₂  Science   theory, harmony, analysis
+         ├── e₃.₃  Art       performance, improvisation
+         ├── e₃.₄  Life      body, breath, bow, voice
+         └── e₃.₅  Meaning   held dissonance · catharsis
+                    ⟨ same pentad, one level down ⟩</div>
 
       <div class="prose">
         <p>High-dimensional occupancy — many modes lit at once, large entropy — reads as mania. Collapse to one mode forced to carry everything reads as dogmatism. Ukubona's bet is the third option: a stable, low-rank decomposition — a few modes, well-chosen, none of them doing the others' job.</p>
