@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Versailles · Ukubona LLC</title>
+<link rel="icon" href="https://abikesa.github.io/favicon/assets/favicon-dark.ico"/>
+<link rel="icon" href="https://abikesa.github.io/favicon/assets/favicon-light.ico" media="(prefers-color-scheme:light)"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg0:#0d0d0d;--bg1:#161616;--bg2:#1e1e1e;--bg3:#282828;
+  --border:rgba(255,255,255,0.07);--border-md:rgba(255,255,255,0.13);
+  --text0:#f2f0eb;--text1:#b8b4aa;--text2:#6e6a62;
+  --accent:#7f77dd;--accent-d:rgba(127,119,221,0.15);--accent-b:rgba(127,119,221,0.35);
+  --gold:#c8921a;--gold-d:rgba(200,146,26,0.13);--gold-b:rgba(200,146,26,0.32);
+  --coral:#d85a30;--coral-d:rgba(216,90,48,0.13);--coral-b:rgba(216,90,48,0.32);
+  --teal:#1d9e75;--teal-d:rgba(29,158,117,0.13);--teal-b:rgba(29,158,117,0.30);
+  --rose:#c0516a;--rose-d:rgba(192,81,106,0.13);--rose-b:rgba(192,81,106,0.30);
+  --serif:'DM Serif Display',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --mono:'DM Mono','Fira Mono',monospace;
+  --max:820px;--r:8px;--rl:14px;
+}
+[data-theme="light"]{
+  --bg0:#f5f3ee;--bg1:#ffffff;--bg2:#f0ede6;--bg3:#e8e4db;
+  --border:rgba(0,0,0,0.07);--border-md:rgba(0,0,0,0.13);
+  --text0:#1a1916;--text1:#4a4740;--text2:#8a8680;
+  --accent:#534ab7;--accent-d:rgba(83,74,183,0.09);--accent-b:rgba(83,74,183,0.28);
+  --gold:#7a520a;--gold-d:rgba(122,82,10,0.09);--gold-b:rgba(122,82,10,0.26);
+  --coral:#993c1d;--coral-d:rgba(153,60,29,0.09);--coral-b:rgba(153,60,29,0.26);
+  --teal:#127a58;--teal-d:rgba(18,122,88,0.09);--teal-b:rgba(18,122,88,0.24);
+  --rose:#923148;--rose-d:rgba(146,49,72,0.09);--rose-b:rgba(146,49,72,0.24);
+}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:var(--sans);background:var(--bg0);color:var(--text0);line-height:1.75;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s;}
+
+nav{position:sticky;top:0;z-index:200;background:var(--bg0);border-bottom:1px solid var(--border);transition:background .3s;}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:0 1.5rem;height:52px;display:flex;align-items:center;gap:.85rem;}
+.logo-wrap{width:30px;height:30px;flex-shrink:0;position:relative;}
+.logo-wrap img{width:100%;height:100%;object-fit:contain;position:absolute;top:0;left:0;transition:opacity .35s;animation:spin 120s linear infinite;}
+.logo-dark{opacity:1;}.logo-light{opacity:0;}
+[data-theme="light"] .logo-dark{opacity:0;}[data-theme="light"] .logo-light{opacity:1;}
+@keyframes spin{to{transform:rotate(360deg);}}
+@media(prefers-reduced-motion:reduce){.logo-wrap img{animation:none;}}
+.nav-brand{font-family:var(--serif);font-size:.95rem;color:var(--text0);flex:1;}
+.nav-sub{font-family:var(--mono);font-size:.58rem;color:var(--text2);letter-spacing:.08em;margin-left:.4rem;}
+.theme-btn{background:var(--bg2);border:1px solid var(--border-md);border-radius:20px;padding:.25rem .75rem;font-family:var(--mono);font-size:.62rem;color:var(--text1);cursor:pointer;letter-spacing:.05em;transition:background .2s,color .2s;flex-shrink:0;}
+.theme-btn:hover{background:var(--bg3);color:var(--text0);}
+
+.outer{max-width:var(--max);margin:0 auto;padding:0 1.5rem;}
+
+.hero{padding:3.5rem 0 2.5rem;border-bottom:1px solid var(--border);}
+.eyebrow{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text2);margin-bottom:.85rem;}
+.hero-title{font-family:var(--serif);font-size:clamp(2rem,5.5vw,3.4rem);line-height:1.08;letter-spacing:-.02em;color:var(--text0);margin-bottom:.9rem;}
+.hero-title em{font-style:italic;color:var(--accent);}
+.hero-lede{font-size:1rem;color:var(--text1);max-width:62ch;line-height:1.72;margin-bottom:1.4rem;}
+
+.section{padding:3rem 0;border-top:1px solid var(--border);}
+.section-head{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text2);margin-bottom:1.1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border);}
+.section-title{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2rem);line-height:1.12;color:var(--text0);margin-bottom:1.2rem;}
+.section-title em{font-style:italic;color:var(--accent);}
+
+.prose{color:var(--text1);font-size:.92rem;line-height:1.78;}
+.prose p{margin-bottom:.85rem;}
+.prose p:last-child{margin-bottom:0;}
+.prose strong{color:var(--text0);font-weight:500;}
+.prose em{font-style:italic;}
+.prose a{color:var(--accent);text-decoration:none;}
+.prose a:hover{text-decoration:underline;}
+
+.eq{font-family:var(--mono);font-size:.8rem;background:var(--bg2);border-left:3px solid var(--accent-b);border-radius:0 var(--r) var(--r) 0;padding:1rem 1.25rem;color:var(--text0);line-height:2;margin:1.25rem 0;overflow-x:auto;white-space:pre;}
+
+blockquote{border-left:2px solid var(--border-md);padding-left:1rem;margin:1.2rem 0;color:var(--text2);font-style:italic;font-size:.9rem;line-height:1.65;}
+
+/* iso rating cards */
+.iso-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.5rem 0;}
+.iso-card{background:var(--bg1);border:1px solid var(--border);border-radius:var(--rl);padding:1.25rem;border-top:3px solid var(--card-color,var(--border-md));}
+.iso-label{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--card-color,var(--text2));margin-bottom:.4rem;}
+.iso-title{font-family:var(--serif);font-size:1.05rem;color:var(--text0);margin-bottom:.5rem;}
+.iso-rating{font-family:var(--mono);font-size:.65rem;color:var(--text2);margin-bottom:.7rem;}
+.iso-body{font-size:.83rem;color:var(--text1);line-height:1.7;}
+
+/* trajectory comparison */
+.traj-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.traj-card{background:var(--bg1);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;}
+.traj-head{padding:.75rem 1.1rem;border-bottom:1px solid var(--border);font-family:var(--mono);font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;}
+.traj-body{padding:.9rem 1.1rem;font-family:var(--mono);font-size:.75rem;color:var(--text1);line-height:2;}
+.traj-body span{display:block;}
+.traj-arrow{color:var(--text2);margin-left:.5rem;}
+
+/* verdict */
+.verdict{background:var(--gold-d);border:1px solid var(--gold-b);border-radius:var(--rl);padding:1.75rem;margin:2rem 0 3rem;}
+.verdict-head{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.9rem;}
+.verdict-quote{font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,2.5vw,1.3rem);color:var(--text0);line-height:1.38;margin-bottom:.75rem;}
+.verdict-body{font-size:.875rem;color:var(--text1);line-height:1.75;}
+.verdict-body strong{color:var(--text0);font-weight:500;}
+
+/* claude addition */
+.claude-card{background:var(--accent-d);border:1px solid var(--accent-b);border-radius:var(--rl);padding:1.5rem;margin:2rem 0;}
+.claude-head{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;}
+.claude-body{font-size:.875rem;color:var(--text1);line-height:1.78;}
+.claude-body p{margin-bottom:.75rem;}
+.claude-body p:last-child{margin-bottom:0;}
+.claude-body strong{color:var(--text0);font-weight:500;}
+
+footer{border-top:1px solid var(--border);padding:2rem 0;}
+.footer-inner{max-width:var(--max);margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;}
+.footer-mark{font-family:var(--mono);font-size:.6rem;color:var(--text2);line-height:1.9;letter-spacing:.04em;}
+.footer-mark span{color:var(--text1);}
+.footer-refs{font-family:var(--mono);font-size:.58rem;color:var(--text2);line-height:1.9;}
+.footer-refs a{color:var(--text2);text-decoration:none;}
+.footer-refs a:hover{color:var(--text1);}
+
+@media(max-width:620px){
+  .outer{padding:0 1rem;}
+  .iso-grid{grid-template-columns:1fr;}
+  .traj-grid{grid-template-columns:1fr;}
+  .hero-title{font-size:1.9rem;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo-wrap" aria-hidden="true">
+      <img class="logo-dark"  src="https://abikesa.github.io/logos/assets/ukubona-dark.png"  alt=""/>
+      <img class="logo-light" src="https://abikesa.github.io/logos/assets/ukubona-light.png" alt=""/>
+    </div>
+    <div class="nav-brand">Ukubona <span class="nav-sub">· versailles · structural isomorphism</span></div>
+    <button class="theme-btn" id="theme-btn">light</button>
+  </div>
+</nav>
+
+<div class="outer">
+
+  <header class="hero">
+    <p class="eyebrow">Ukubona LLC · Versailles 1919 / 2026 · Nietzsche · Kampala · 20 Jun 2026</p>
+    <h1 class="hero-title">It is pretty<br><em>uncanny</em>.</h1>
+    <p class="hero-lede">Trump signing an Iran peace MOU at Versailles in 2026, while cultivating a nationalist/populist movement. Three kinds of isomorphism. Symbols are sticky. People inhabit symbolic architectures they did not design.</p>
+  </header>
+
+  <!-- THREE ISOMORPHISMS -->
+  <section class="section">
+    <h2 class="section-head">Three kinds of isomorphism</h2>
+    <h3 class="section-title">Symbolic · Structural · <em>Historical</em></h3>
+
+    <div class="iso-grid">
+      <div class="iso-card" style="--card-color:var(--accent);">
+        <div class="iso-label">1 · Symbolic</div>
+        <div class="iso-title">Very strong</div>
+        <div class="iso-rating">confidence: high</div>
+        <div class="iso-body">The 1919 treaty became, in German memory, a symbol of humiliation, diktat, resentment, and later revisionism. That symbolism remains potent. The signing at the palace this week is well documented. For someone steeped in Nietzsche, Birth of Tragedy, nationalism, decadence, and self-critique, it is hard not to see the irony.</div>
+      </div>
+      <div class="iso-card" style="--card-color:var(--gold);">
+        <div class="iso-label">2 · Structural</div>
+        <div class="iso-title">Moderate</div>
+        <div class="iso-rating">confidence: medium — strongest claim</div>
+        <div class="iso-body">Nietzsche's 1886 self-critique is a meditation on unintended trajectories. He looks back and says: I thought I was writing about Greeks — I was writing about myself. I thought I was defending Wagner — I was discovering Dionysus. Observers see Versailles. Europeans see 1919. Historians see humiliation. Nietzscheans see tragic recurrence.</div>
+      </div>
+      <div class="iso-card" style="--card-color:var(--coral);">
+        <div class="iso-label">3 · Historical</div>
+        <div class="iso-title">Weak</div>
+        <div class="iso-rating">confidence: resist the equation</div>
+        <div class="iso-body">1919 Versailles involved defeat of a major continental power, reparations, war guilt clauses, territorial losses, military restrictions. The 2026 Iran MOU appears to be an interim agreement intended to stop hostilities — not a punitive settlement in the mold of 1919. The commonality is less content than staging.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAJECTORIES -->
+  <section class="section">
+    <h2 class="section-head">Trajectory comparison · verbatim</h2>
+    <h3 class="section-title">Two arcs arriving at<br><em>nearby coordinates</em></h3>
+
+    <div class="traj-grid">
+      <div class="traj-card">
+        <div class="traj-head" style="color:var(--accent);">Nietzsche · 1870–1886</div>
+        <div class="traj-body">
+          <span>thunderclap of war<span class="traj-arrow">↓</span></span>
+          <span>writing in the Alps<span class="traj-arrow">↓</span></span>
+          <span>questioning Greek serenity<span class="traj-arrow">↓</span></span>
+          <span>suspicion of nationalism<span class="traj-arrow">↓</span></span>
+          <span>suspicion of modern optimism<span class="traj-arrow">↓</span></span>
+          <span style="color:var(--accent);">Dionysian affirmation</span>
+        </div>
+      </div>
+      <div class="traj-card">
+        <div class="traj-head" style="color:var(--coral);">Trump · 2025–2026</div>
+        <div class="traj-body">
+          <span>brief regional war<span class="traj-arrow">↓</span></span>
+          <span>Versailles<span class="traj-arrow">↓</span></span>
+          <span>peace memorandum<span class="traj-arrow">↓</span></span>
+          <span>MAGA nationalism<span class="traj-arrow">↓</span></span>
+          <span>theatrics<span class="traj-arrow">↓</span></span>
+          <span style="color:var(--coral);">claims of restored greatness</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>There is certainly an aesthetic and historical rhyme.</p>
+    </div>
+  </section>
+
+  <!-- HISTORICAL CAUTION -->
+  <section class="section">
+    <h2 class="section-head">Historical caution · verbatim</h2>
+    <h3 class="section-title">What the staging shares<br>and what it <em>does not</em></h3>
+
+    <div class="prose">
+      <p>I would resist saying:</p>
+    </div>
+
+    <div class="eq">1919 Versailles ≅ 2026 Versailles</div>
+
+    <div class="prose">
+      <p>Historically. But I would happily say:</p>
+    </div>
+
+    <div class="eq">1919 Versailles
+:
+humiliated peace
+national resentment
+symbolic theater
+
+
+2026 Versailles
+:
+peace theater
+national populism
+symbolic theater</div>
+
+    <div class="prose">
+      <p>The commonality is less <strong>content</strong> than <strong>staging</strong>.</p>
+    </div>
+  </section>
+
+  <!-- NIETZSCHE SMILES -->
+  <section class="section">
+    <h2 class="section-head">What Nietzsche would probably enjoy · verbatim</h2>
+    <h3 class="section-title">Symbols are sticky.<br>People inhabit architectures they did <em>not design</em>.</h3>
+
+    <div class="prose">
+      <p>What I suspect Nietzsche might enjoy most is not the geopolitics but the irony.</p>
+      <p>The man who wrote in 1886:</p>
+    </div>
+
+    <blockquote>"I have learned to think of that 'German character' without hope and without mercy"</blockquote>
+
+    <div class="prose">
+      <p>finds, 140 years later, a populist nationalist movement celebrating restored greatness while a peace memorandum is signed at Versailles — a site whose memory helped nourish one of the twentieth century's most destructive national revanchisms.</p>
+      <p>Not because history repeats mechanically. But because symbols are sticky. People inhabit symbolic architectures they did not design.</p>
+      <p>To borrow your language, perhaps:</p>
+    </div>
+
+    <div class="eq">Historical events
+        ↓
+
+Collective memory
+        ↓
+
+Political aesthetics
+        ↓
+
+National affect
+        ↓
+
+Meaning attribution</div>
+
+    <div class="prose">
+      <p>And occasionally, two trajectories arrive at nearby coordinates in that manifold, producing the uncanny feeling:</p>
+    </div>
+
+    <blockquote>"I didn't intend this analogy."</blockquote>
+
+    <div class="prose">
+      <p>followed immediately by</p>
+    </div>
+
+    <blockquote>"Yet the Jacobian says the local structure is remarkably similar."</blockquote>
+
+    <div class="prose">
+      <p>That, I think, is the most interesting aspect of your observation: not that Trump consciously reenacted 1919, but that observers carrying certain historical and philosophical priors can recognize a surprisingly high degree of structural resonance in the scene.</p>
+    </div>
+  </section>
+
+  <!-- CLAUDE ADDITION -->
+  <section class="section">
+    <h2 class="section-head">Anthropic / Claude · addition</h2>
+    <h3 class="section-title">The eigenmode that was<br><em>always already occupied</em></h3>
+
+    <div class="claude-card">
+      <div class="claude-head">Claude's contribution</div>
+      <div class="claude-body">
+        <p>What the GPT analysis calls "structural isomorphism — moderate" is actually the deepest claim, and it maps directly onto the Ukubona principal components framework. The Jacobian doesn't care whether the effector is Nietzsche in the Alps or Trump at Versailles. What it measures is the same: <strong>∂Meaning/∂Symbol</strong> — how much the interpretation shifts per unit of symbolic staging.</p>
+        <p>The reason the 1919–2026 resonance feels uncanny rather than merely coincidental is that both events activate the same eigenmode: <strong>e₅ — the integrative basis</strong>, the mode concerned with how national communities construct meaning out of theatrical acts of sovereignty. That eigenmode was occupied in 1919. It is occupied now. The Tensor is different (different war, different powers, different century) but the eigenmode projection is recognizably similar — which is exactly what "structural isomorphism" means formalized.</p>
+        <p>GPT's most precise formulation is the one it gives almost in passing: <em>"observers carrying certain historical and philosophical priors can recognize a surprisingly high degree of structural resonance in the scene."</em> Translate: observers whose attention filter (Jacobian, Layer II) is tuned to the Nietzschean frequency will have high ∂Perception/∂Symbol coefficients for this event. Others will see a diplomatic photo op.</p>
+        <p><strong>The Jacobian is not in the event. It is in the observer.</strong> Versailles 2026 is not inherently Nietzschean. It becomes Nietzschean in the hands of someone whose sensitivity operator was shaped by the Birth of Tragedy, by Kampala, by a pentad inherited from a century-old self-critique. Okubala si Kulaba: the counting (1919, 2026, Versailles, MOU) is not the seeing. The seeing is the Jacobian the observer brings to the count.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VERDICT -->
+  <div class="verdict">
+    <div class="verdict-head">Synthesis · the uncanny as Jacobian signal</div>
+    <div class="verdict-quote">"Yet the Jacobian says the local structure is remarkably similar."</div>
+    <div class="verdict-body">
+      <p>The uncanny is not error. It is signal. When two trajectories arrive at nearby coordinates in the meaning manifold, the observer who notices is the one whose sensitivity operator — whose Jacobian, whose mode of attention — was calibrated to that frequency. <strong>Symbols are sticky precisely because eigenmodes persist across centuries.</strong> The 1919 eigenmode was never discharged. It waits, available for activation, whenever the staging is close enough.</p>
+      <p>Not because history repeats. Because the tensor of collective memory is append-only. State<sub>t</sub> = Σ Event<sub>i</sub>. Versailles 1919 is still in the ledger. It was never overwritten. Sequential, consequential, indelible.</p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-mark">
+      <div>Ukubona LLC — <span>Versailles · Structural Isomorphism · Nietzsche</span></div>
+      <div style="margin-top:3px;font-size:.56rem">State<sub>t</sub> = Σ Event<sub>i</sub> · Kampala · 20 Jun 2026</div>
+    </div>
+    <div class="footer-refs">
+      <div><a href="https://www.reuters.com/world/frances-macron-hosts-trump-versailles-palace-2026-06-17/" target="_blank">Reuters — Macron hosts Trump at Versailles Palace</a></div>
+      <div><a href="https://www.eenews.net/articles/trump-signs-deal-in-versailles-to-end-war-with-iran/" target="_blank">E&amp;E News — Trump signs deal in Versailles to end war with Iran</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const html=document.documentElement;
+const btn=document.getElementById('theme-btn');
+let t='dark';
+function apply(v){t=v;html.setAttribute('data-theme',v);btn.textContent=v==='dark'?'light':'dark';}
+btn.addEventListener('click',()=>apply(t==='dark'?'light':'dark'));
+apply('dark');
+</script>
+</body>
+</html>
